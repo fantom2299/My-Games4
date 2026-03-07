@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Викторина</title>
+  <link rel="stylesheet" href="prostaya-viktorina.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>🧠 Викторина</h1>
+    <p class="subtitle">Проверьте свои знания!</p>
+
+    <div class="buttons">
+      <button id="start-btn" class="btn-start">🎮 Начать викторину</button>
+      <button id="show-result-btn" class="btn-result" style="display: none;">📊 Показать результат</button>
+    </div>
+
+    <div id="result" class="result">
+      <h3>Результаты викторины:</h3>
+      <div id="result-stats" class="stats"></div>
+      <div id="answers-list"></div>
+    </div>
+  </div>
+
+
+  <script src="prostaya-viktorina.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Генератор случайных цветов</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s ease;
+    }
+
+    .container {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .color-button {
+      background-color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 20px 40px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .color-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .color-button:active {
+      transform: translateY(0);
+    }
+
+    .color-code {
+      margin-top: 20px;
+      font-size: 1.5rem;
+      color: white;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: rgba(0, 0, 0, 0.3);
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <button class="color-button" id="colorButton">
+      🎨 Сменить цвет
+    </button>
+    <div class="color-code" id="colorCode">
+      #FFFFFF
+    </div>
+  </div>
+
+  <script>
+    // Находим элементы на странице
+    const button = document.getElementById('colorButton');
+    const colorDisplay = document.getElementById('colorCode');
+
+    // Функция для генерации случайного цвета в HEX формате
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    // Альтернативная функция с использованием RGB
+    function getRandomRGBColor() {
+      const r = Math.floor(Math.random() * 256);
+      const g = Math.floor(Math.random() * 256);
+      const b = Math.floor(Math.random() * 256);
+      return `rgb(${r}, ${g}, ${b})`;
+    }
+
+    // Функция для изменения цвета фона
+    function changeColor() {
+      // Используем HEX формат
+      const newColor = getRandomColor();
+
+      // Альтернативно можно использовать RGB:
+      // const newColor = getRandomRGBColor();
+
+      // Меняем цвет фона
+      document.body.style.backgroundColor = newColor;
+
+      // Обновляем отображение кода цвета
+      colorDisplay.textContent = newColor;
+    }
+
+    // Добавляем обработчик события на кнопку
+    button.addEventListener('click', changeColor);
+
+    // Устанавливаем начальный цвет
+    changeColor();
+  </script>
+</body>
+
+</html>

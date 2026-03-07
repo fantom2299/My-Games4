@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Простая арифметика</title>
+</head>
+
+<body>
+  <!DOCTYPE html>
+  <html lang="ru">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор математических задач</title>
+    <link rel="stylesheet" href="arithmetic.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>🔢 Математический тренажер</h1>
+      <p>Решите случайную арифметическую задачу:</p>
+
+      <div id="task">Нажмите "Новая задача"</div>
+
+      <div>
+        <button onclick="generateTask()">Новая задача</button>
+        <button onclick="checkAnswer()">Проверить ответ</button>
+      </div>
+
+      <div id="result"></div>
+
+      <div class="stats">
+        <p>Решено задач: <span id="total">0</span> |
+          Правильно: <span id="correct">0</span> |
+          Ошибок: <span id="wrong">0</span></p>
+      </div>
+    </div>
+
+    <script src="math-tasks.js"></script>
+  </body>
+
+  </html>
+
+
+  <script src="arithmetic.js"></script>
+
+</body>
+
+</html>
